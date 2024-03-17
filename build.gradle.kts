@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("application")
 }
 
 group = "io.github.realyusufismail"
@@ -24,11 +25,15 @@ dependencies {
     implementation("ch.qos.logback:logback-core:1.4.14")
     implementation("uk.org.lidalia:sysout-over-slf4j:1.0.2")
 
-    testImplementation(platform("org.junit:junit-bom:5.9.2"))
+    testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    testImplementation("org.mockito:mockito-core:5.7.0")
+    testImplementation("org.mockito:mockito-core:5.10.0")
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = "io.github.realyusufismail.JDA5Bot"
 }

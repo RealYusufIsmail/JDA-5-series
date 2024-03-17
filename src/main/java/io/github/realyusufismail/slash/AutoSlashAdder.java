@@ -27,6 +27,8 @@ public class AutoSlashAdder extends SlashCommandHandler {
                 })
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList()));
+
+        sendSlashCommands();
     }
 
     private List<Class<? extends ISlashCommand>> loadSlashCommands() {
